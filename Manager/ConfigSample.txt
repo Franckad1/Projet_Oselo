@@ -1,0 +1,14 @@
+<?php
+ 
+namespace Manager;
+
+final class Config{
+    const HOST = 'Host_name';
+    const DBNAME = 'db_name';
+    const DBUSER = 'User_name';
+    const DBPASSWORD = 'db_password';
+    const PATH = '/Pathname/';
+    const URL = 'http://Host_name/' . self::PATH;
+   
+}//Class contenant toutes les constantes utiles à la navigation sur l'application ou la connexion avec la base de données
+
