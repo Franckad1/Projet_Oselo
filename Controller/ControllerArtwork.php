@@ -14,7 +14,7 @@ class ControllerArtwork extends Controller{
       'artwork'=>$this->model->selectById($id)
       ];
     
-    $this->render('artwork/artwork.html',$params);
+    $this->render('artwork/newArtwork.html',$params);
   }
   public function new(){
     $params=[
@@ -31,11 +31,31 @@ class ControllerArtwork extends Controller{
 
   public function edit($id){
     
+    if(empty($_POST)){
       $params=[
         'title'=>$this->model->selectById($id)->title,
         'current'=>$this->model->selectById($id)
         ];
-    
-    $this->render('artwork/newArtwork.html',$params);
+      
+        $this->render('artwork/newArtwork.html',$params);
+      }else{
+        $params=[
+          'title'=>'Update Artwork',
+          ];
+         $this->model->update($_POST,$id);
+        }
+      $this->render('artwork/newArtwork.html',$params);
   }
+
+  public function delete($id){
+    $ctlWarehouse = new ControllerWarehouse;
+    $this->model->delete($id);
+    $params=[
+      'title'=>'Accueil Oselo',
+      'artworks'=>$this->model->selectAll(),
+      'warehouses'=>$ctlWarehouse->model->selectAll()
+    ];
+    $this->render('home.html',$params);
+  }
+
 }

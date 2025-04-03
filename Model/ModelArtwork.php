@@ -9,5 +9,10 @@ public function __construct() {
   $this->propriete=['id_warehouse','title','year','artist_name','size'];
 }
 
+public function join(){
+$stmt=$this->pdo->prepare("SELECT * FROM warehouse w INNER JOIN ". $this->nomTable ." a ON w.id_warehouse = a.id_warehouse");
+$stmt->execute();
+return $stmt->fetchAll();
+}
 
 }

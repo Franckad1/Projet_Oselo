@@ -13,7 +13,7 @@
   <input class="input" type="text" placeholder="Size" name="size" value="<?php echo $_POST['size'] ?? $current->size ??'' ?>" required><br>
 
   <label for="id">Warehouse number</label><span style="color: red; font-size: 20px; ">*</span><br>
-  <input class="input" type="text" placeholder="Warehouse number" name="id_warehouse" value="<?php echo $_POST['id_warehouse'] ?? $current->id_warehouse ??'' ?>" required><br>
-
-  <button class="button">Ajouter</button>
+  <input class="input" type="text" placeholder="Warehouse number" name="id_warehouse" value="<?php echo $_POST['id_warehouse'] ?? $current->id_warehouse ??'' ?>" ><br>
+  <br>
+  <button class="button"><?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?></button>
 </form>

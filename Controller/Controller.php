@@ -21,9 +21,10 @@ protected $model;
   public function home(){
     $ctlArtwork=new ControllerArtwork;
     $ctlWarehouse= new ControllerWarehouse;
+
     $params=[
       'title'=>'Accueil Oselo',
-      'artworks'=>$ctlArtwork->model->selectAll(),
+      'artworks'=>$ctlArtwork->model->join(),
       'warehouses'=>$ctlWarehouse->model->selectAll()
     ];
     

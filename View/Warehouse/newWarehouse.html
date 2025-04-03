@@ -1,9 +1,12 @@
+<?php var_dump($_POST) ?>
 <form action="" method="post">
+  
   <label for="name">Name</label><span style="color: red; font-size: 20px; ">*</span><br>
-  <input class="input" type="text" placeholder="Name" name="name" required><br>
+  <input class="input" type="text" placeholder="Name" name="name" value="<?php echo $_POST['name'] ?? $current->name ?? '' ?>" required><br>
 
   <label for="adress">Adress</label><span style="color: red; font-size: 20px; ">*</span><br>
-  <input class="input" type="text" placeholder="Adress" name="name" required><br>
+  <input class="input" type="text" placeholder="Adress" name="adress" value="<?php echo $_POST['adress'] ?? $current->adress ?? '' ?>" required><br>
+  <br>
+  <button class="button"><?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?></button>
 
-  <button class="button">Ajouter</button>
 </form>
