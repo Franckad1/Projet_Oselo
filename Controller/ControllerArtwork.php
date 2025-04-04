@@ -1,7 +1,7 @@
 <?php
 namespace Controller;
 
-use Model;
+use Model,Manager;
 
 
 class ControllerArtwork extends Controller{
@@ -18,9 +18,19 @@ class ControllerArtwork extends Controller{
     
     $this->render('artwork/newArtwork.html',$params);
   }
-  public function new(){
+  public function viewALL(){
     $params=[
-      'title'=>'New artwork'
+      'title'=>'',
+      'artworks'=>$this->model->join()
+    ];
+    $this->render('artwork/artworks.html',$params);
+  }
+
+  public function new(){
+    $ctlWarehouse = new ControllerWarehouse;
+    $params=[
+      'title'=>'New artwork',
+      'warehouses'=>$ctlWarehouse->model->selectAll()
     ];
     if(empty($_POST)){
     }else{
@@ -39,26 +49,15 @@ class ControllerArtwork extends Controller{
         'current'=>$this->model->selectById($id),
         'warehouses'=>$ctlWarehouse->model->selectAll()
         ];
-      
-        $this->render('artwork/newArtwork.html',$params);
       }else{
         $params=[
           'title'=>'Update Artwork',
           ];
          $this->model->update($_POST,$id);
+         header("Location:".Manager\Config::URL."artwork/viewALL");
+         exit;
         }
       $this->render('artwork/newArtwork.html',$params);
-  }
-
-  public function delete($id){
-    $ctlWarehouse = new ControllerWarehouse;
-    $this->model->delete($id);
-    $params=[
-      'title'=>'Accueil Oselo',
-      'artworks'=>$this->model->selectAll(),
-      'warehouses'=>$ctlWarehouse->model->selectAll()
-    ];
-    $this->render('home.html',$params);
   }
 
 }

@@ -1,6 +1,6 @@
 <?php
 namespace Controller;
-use Model;
+use Model,Manager;
 class ControllerWarehouse extends Controller{
 public function __construct(){
   $this->model=new Model\ModelWarehouse;
@@ -35,24 +35,15 @@ $params=[
   'title'=>$this->model->selectById($id)->name,
   'current'=>$this->model->selectById($id)
   ];
-
-  $this->render('warehouse/newWarehouse.html',$params);
 }else{
   $params=[
     'title'=>'Update warehouse',
     ];
    $this->model->update($_POST,$id);
+   header("Location:".Manager\Config::URL);
+   exit;
   }
 $this->render('warehouse/newWarehouse.html',$params);
 }
-public function delete($id){
-  $ctlArtwork = new ControllerArtwork;
-$this->model->delete($id);
-$params=[
-  'title'=>'Accueil Oselo',
-  'artworks'=>$ctlArtwork->model->selectAll(),
-  'warehouses'=>$this->model->selectAll()
-];
-$this->render('home.html',$params);
-}
+
 }

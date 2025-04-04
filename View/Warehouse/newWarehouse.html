@@ -1,7 +1,6 @@
-<?php var_dump($_POST) ?>
 <form action="" method="post">
   
-  <label for="name">Name</label><span style="color: red; font-size: 20px; ">*</span><br>
+  <label for="name">Warehouse Name</label><span style="color: red; font-size: 20px; ">*</span><br>
   <input class="input" type="text" placeholder="Name" name="name" value="<?php echo $_POST['name'] ?? $current->name ?? '' ?>" required><br>
 
   <label for="adress">Adress</label><span style="color: red; font-size: 20px; ">*</span><br>

@@ -1,7 +1,7 @@
 <?php
 
 namespace Controller;
-
+use Manager;
 class Controller{
 protected $model;
   public function render($view,$param = array()) {
@@ -17,14 +17,15 @@ protected $model;
     ];
     $this->render('page404.html',$params);
   }
-
+  public function delete($id){
+    $this->model->delete($id);
+    header("Location:".Manager\Config::URL);
+  }
   public function home(){
-    $ctlArtwork=new ControllerArtwork;
     $ctlWarehouse= new ControllerWarehouse;
 
     $params=[
       'title'=>'Accueil Oselo',
-      'artworks'=>$ctlArtwork->model->join(),
       'warehouses'=>$ctlWarehouse->model->selectAll()
     ];
     

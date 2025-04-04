@@ -16,7 +16,7 @@
   <select name="id_warehouse" required>
     <option value="">Choisissez une galerie...</option>
     <?php foreach($warehouses as $warehouse){ 
-      if($warehouse->id_warehouse == $_POST['id_warehouse'] or $warehouse->id_warehouse == $current->id_warehouse ){?> 
+      if($warehouse->id_warehouse == $_POST['id_warehouse'] or $warehouse->id_warehouse == $current->id_warehouse ){ ?> 
       <option value="<?php echo $warehouse->id_warehouse; ?>" selected> <?php echo $warehouse->name; ?> </option> <?php }else{ ?>
       <option value="<?php echo $warehouse->id_warehouse; ?>"> <?php echo $warehouse->name; ?> </option> <?php } ?>   
     <?php } ?>
