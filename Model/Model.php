@@ -49,7 +49,7 @@ abstract class Model
       $chaine[] = "$name = :$name";
     }
 
-    $stmt = $this->pdo->prepare("UPDAT " . $this->nomTable . " SET " . implode(',', $chaine) . " WHERE " . $this->IDTable . " = :id");
+    $stmt = $this->pdo->prepare("UPDATE " . $this->nomTable . " SET " . implode(',', $chaine) . " WHERE " . $this->IDTable . " = :id");
     $values['id'] = $id;
 
     $stmt->execute($values);

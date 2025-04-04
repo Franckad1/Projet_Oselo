@@ -1,5 +1,12 @@
 <center>
-  <?php echo (empty($error)) ? '' : $errorMessage ?>
+  <div>
+    <?php 
+     if(!empty($error)) {
+      echo $error;
+      echo "<button>Ok</button>";}
+    ?>
+  </div>
+
   <form action="" method="post">
     <label for="name">Warehouse Name</label
     ><span style="color: red; font-size: 20px">*</span><br />
@@ -9,7 +16,6 @@
       placeholder="Name"
       name="name"
       value="<?php echo $_POST['name'] ?? $current->name ?? '' ?>"
-      required
     /><br />
 
     <label for="adress">Adress</label
@@ -20,7 +26,6 @@
       placeholder="Adress"
       name="adress"
       value="<?php echo $_POST['adress'] ?? $current->adress ?? '' ?>"
-      required
     /><br />
     <br />
     <button class="button">
