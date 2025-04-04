@@ -9,9 +9,11 @@ class ControllerArtwork extends Controller{
     $this->model=new Model\ModelArtwork;
   }
   public function view($id){
+    $ctlWarehouse = new ControllerWarehouse;
     $params=[
       'title'=>$this->model->selectById($id)->title,
-      'artwork'=>$this->model->selectById($id)
+      'artwork'=>$this->model->selectById($id),
+      'warehouses'=>$ctlWarehouse->model->selectAll()
       ];
     
     $this->render('artwork/newArtwork.html',$params);
@@ -30,11 +32,12 @@ class ControllerArtwork extends Controller{
   }
 
   public function edit($id){
-    
+    $ctlWarehouse = new ControllerWarehouse;
     if(empty($_POST)){
       $params=[
         'title'=>$this->model->selectById($id)->title,
-        'current'=>$this->model->selectById($id)
+        'current'=>$this->model->selectById($id),
+        'warehouses'=>$ctlWarehouse->model->selectAll()
         ];
       
         $this->render('artwork/newArtwork.html',$params);

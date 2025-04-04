@@ -13,7 +13,14 @@
   <input class="input" type="text" placeholder="Size" name="size" value="<?php echo $_POST['size'] ?? $current->size ??'' ?>" required><br>
 
   <label for="id">Warehouse number</label><span style="color: red; font-size: 20px; ">*</span><br>
-  <input class="input" type="text" placeholder="Warehouse number" name="id_warehouse" value="<?php echo $_POST['id_warehouse'] ?? $current->id_warehouse ??'' ?>" ><br>
+  <select name="id_warehouse" required>
+    <option value="">Choisissez une galerie...</option>
+    <?php foreach($warehouses as $warehouse){ 
+      if($warehouse->id_warehouse == $_POST['id_warehouse'] or $warehouse->id_warehouse == $current->id_warehouse ){?> 
+      <option value="<?php echo $warehouse->id_warehouse; ?>" selected> <?php echo $warehouse->name; ?> </option> <?php }else{ ?>
+      <option value="<?php echo $warehouse->id_warehouse; ?>"> <?php echo $warehouse->name; ?> </option> <?php } ?>   
+    <?php } ?>
+    </select> <br>
   <br>
   <button class="button"><?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?></button>
 </form>

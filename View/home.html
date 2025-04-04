@@ -18,7 +18,7 @@
       <?php echo $artwork->title ?> 
     </td>
     <td style="border: 1px solid rgb(160 160 160)">
-      <a href="<?php echo Manager\Config::URL.'warehouse/view/'.$artwork->id_warehouse ;?>"> <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo 'Not defined';  ?> </a>
+      <a href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"> <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo 'Not defined';  ?> </a>
     </td>
     <td style="border: 1px solid rgb(160 160 160)">
        <?php echo $artwork->year ?> 
