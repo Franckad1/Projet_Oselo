@@ -1,29 +1,28 @@
-<h1> List of Warehouses</h1>
-<table style="border: 1px solid black">
-  <tr style="border: 1px solid rgb(160 160 160)">
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">N°</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Warehouse Name</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Address</th>
+<center><h1>Warehouses</h1></center>
+<table>
+  <tr>
+    <th scope="col">N°</th>
+    <th scope="col">Warehouse Name</th>
+    <th scope="col">Address</th>
   </tr>
   <?php foreach($warehouses as $warehouse ){?>
   <tr>
-    <th scope="row" style="border: 1px solid rgb(160 160 160)">
+    <th scope="row">
       <?php echo $warehouse->id_warehouse ?>
     </th>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <?php echo $warehouse->name ?> 
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <?php echo $warehouse->adress ?> 
     </td>
 
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <a href="<?php echo Manager\Config::URL.'warehouse/edit/'.$warehouse->id_warehouse ; ?>">Edit</a>
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <a href="<?php echo Manager\Config::URL.'warehouse/delete/'.$warehouse->id_warehouse ; ?>">Delete</a>
     </td>
   </tr>
-
 <?php } ?>
 </table>

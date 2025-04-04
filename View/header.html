@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oselo: <?php if(isset($title)) echo $title ?></title>
+    <link rel="stylesheet" href="<?php echo Manager\Config::URL.'view/style.css' ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="<?php echo Manager\Config::URL;?>">Home</a></li>
-      <li><a href="<?php echo Manager\Config::URL.'artwork/viewALL';?>">List of artworks</a></li>
-      <li><a href="<?php echo Manager\Config::URL.'artwork/new';?>">Add an artwork</a></li>
-      <li><a href="<?php echo Manager\Config::URL.'warehouse/new';?>">Add a Warehouse</a></li>
-    </ul>
-  </nav>
+  <div class="container"> 
+    
+    <nav>
+    <center>
+      <ul>
+        <li><a href="<?php echo Manager\Config::URL;?>">List of warehouses</a></li>
+        <li><a href="<?php echo Manager\Config::URL.'artwork/viewALL';?>">List of artworks</a></li>
+        <li><a href="<?php echo Manager\Config::URL.'artwork/new';?>">Add an artwork</a></li>
+        <li><a href="<?php echo Manager\Config::URL.'warehouse/new';?>">Add a Warehouse</a></li>
+      </ul>
+    </center>
+    </nav>
+  
+  </div>

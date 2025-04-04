@@ -21,6 +21,8 @@ public function new(){
   if(empty($_POST)){
   }else{
     $this->model->insertInto($_POST);
+    header("Location:".Manager\Config::URL);
+    exit;
   }
 
  

@@ -1,39 +1,42 @@
-<h1>List of Artworks</h1>
-<table style="border: 1px solid black">
-  <tr style="border: 1px solid rgb(160 160 160)">
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">N°</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Name</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Warehouse Name</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Year</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Artist</th>
-    <th scope="col" style="border: 1px solid rgb(160 160 160)">Size</th>
+
+<?php echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']; ?>
+
+<center><h1>Artworks</h1></center>
+<table>
+  <tr>
+    <th scope="col">N°</th>
+    <th scope="col">Name</th>
+    <th scope="col">Warehouse Name</th>
+    <th scope="col">Year</th>
+    <th scope="col">Artist</th>
+    <th scope="col">Size</th>
 
   </tr>
   <?php foreach($artworks as $artwork ){?>
   <tr>
-    <th scope="row" style="border: 1px solid rgb(160 160 160)">
+    <th scope="row">
       <?php echo $artwork->id_artwork ?>
     </th>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <?php echo $artwork->title ?> 
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <a href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"> <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo 'Not defined';  ?> </a>
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
        <?php echo $artwork->year ?> 
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <?php echo $artwork->artist_name ?> 
    </td>
-   <td style="border: 1px solid rgb(160 160 160)">
+   <td>
     <?php echo $artwork->size ?> 
    </td>
 
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <a href="<?php echo Manager\Config::URL.'artwork/edit/'.$artwork->id_artwork ; ?>">Edit</a>
     </td>
-    <td style="border: 1px solid rgb(160 160 160)">
+    <td>
       <a href="<?php echo Manager\Config::URL.'artwork/delete/'.$artwork->id_artwork ; ?>">Delete</a>
     </td>
   </tr>

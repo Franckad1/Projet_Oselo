@@ -2,21 +2,12 @@
 namespace Controller;
 
 use Model,Manager;
-
+use PDOException;
+use ErrorManager;
 
 class ControllerArtwork extends Controller{
   public function __construct(){
     $this->model=new Model\ModelArtwork;
-  }
-  public function view($id){
-    $ctlWarehouse = new ControllerWarehouse;
-    $params=[
-      'title'=>$this->model->selectById($id)->title,
-      'artwork'=>$this->model->selectById($id),
-      'warehouses'=>$ctlWarehouse->model->selectAll()
-      ];
-    
-    $this->render('artwork/newArtwork.html',$params);
   }
   public function viewALL(){
     $params=[
@@ -32,9 +23,16 @@ class ControllerArtwork extends Controller{
       'title'=>'New artwork',
       'warehouses'=>$ctlWarehouse->model->selectAll()
     ];
-    if(empty($_POST)){
-    }else{
-      $this->model->insertInto($_POST);
+    if(!empty($_POST)){
+     try{
+        if($this->model->insertInto($_POST)) $_SESSION['Message']="L'oeuvre a été ajouter avec succes";
+        else  $_SESSION['Message']="Oups une erreur c'est produite";}
+      catch(PDOException $e){
+        Manager\ErrorManager::interceptionErreur(date('Y-m-d H:i ').$e->getMessage());
+        var_dump($e);
+      }
+      
+      // header("Location:".Manager\Config::URL."artwork/viewALL");
     }
 
    

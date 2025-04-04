@@ -13,7 +13,8 @@ if (is_null(self::$pdo) )//S'assure que la connexion est déjà établie pour ev
     'root',
     '',
     array(
-      \PDO::ATTR_DEFAULT_FETCH_MODE=>\PDO::FETCH_OBJ
+      \PDO::ATTR_DEFAULT_FETCH_MODE=>\PDO::FETCH_OBJ,
+      \PDO::ATTR_ERRMODE=>\PDO::ERRMODE_EXCEPTION
     )
     );
 }//Instancie la connexion avec ma base de donnée,avec le nom et l'hote compris dans le fichier Config
