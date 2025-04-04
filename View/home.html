@@ -1,3 +1,8 @@
+<?php 
+echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']; 
+unset($_SESSION['Message'])
+?>
+
 <center><h1>Warehouses</h1></center>
 <table>
   <tr>
@@ -7,22 +12,22 @@
   </tr>
   <?php foreach($warehouses as $warehouse ){?>
   <tr>
-    <th scope="row">
-      <?php echo $warehouse->id_warehouse ?>
-    </th>
-    <td>
-      <?php echo $warehouse->name ?> 
-    </td>
-    <td>
-      <?php echo $warehouse->adress ?> 
-    </td>
+    <th scope="row"><?php echo $warehouse->id_warehouse ?></th>
+    <td><?php echo $warehouse->name ?></td>
+    <td><?php echo $warehouse->adress ?></td>
 
     <td>
-      <a href="<?php echo Manager\Config::URL.'warehouse/edit/'.$warehouse->id_warehouse ; ?>">Edit</a>
+      <a
+        href="<?php echo Manager\Config::URL.'warehouse/edit/'.$warehouse->id_warehouse ; ?>"
+        >Edit</a
+      >
     </td>
     <td>
-      <a href="<?php echo Manager\Config::URL.'warehouse/delete/'.$warehouse->id_warehouse ; ?>">Delete</a>
+      <a
+        href="<?php echo Manager\Config::URL.'warehouse/delete/'.$warehouse->id_warehouse ; ?>"
+        >Delete</a
+      >
     </td>
   </tr>
-<?php } ?>
+  <?php } ?>
 </table>

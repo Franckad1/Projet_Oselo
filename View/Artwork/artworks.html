@@ -1,5 +1,10 @@
+<?php 
+echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']; 
+var_dump($_SESSION);
+$_SESSION['Message']='';
 
-<?php echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']; ?>
+
+?>
 
 <center><h1>Artworks</h1></center>
 <table>
@@ -10,36 +15,36 @@
     <th scope="col">Year</th>
     <th scope="col">Artist</th>
     <th scope="col">Size</th>
-
   </tr>
   <?php foreach($artworks as $artwork ){?>
   <tr>
-    <th scope="row">
-      <?php echo $artwork->id_artwork ?>
-    </th>
+    <th scope="row"><?php echo $artwork->id_artwork ?></th>
+    <td><?php echo $artwork->title ?></td>
     <td>
-      <?php echo $artwork->title ?> 
+      <a
+        href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"
+      >
+        <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo
+        'Not defined'; ?>
+      </a>
     </td>
-    <td>
-      <a href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"> <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo 'Not defined';  ?> </a>
-    </td>
-    <td>
-       <?php echo $artwork->year ?> 
-    </td>
-    <td>
-      <?php echo $artwork->artist_name ?> 
-   </td>
-   <td>
-    <?php echo $artwork->size ?> 
-   </td>
+    <td><?php echo $artwork->year ?></td>
+    <td><?php echo $artwork->artist_name ?></td>
+    <td><?php echo $artwork->size ?></td>
 
     <td>
-      <a href="<?php echo Manager\Config::URL.'artwork/edit/'.$artwork->id_artwork ; ?>">Edit</a>
+      <a
+        href="<?php echo Manager\Config::URL.'artwork/edit/'.$artwork->id_artwork ; ?>"
+        >Edit</a
+      >
     </td>
     <td>
-      <a href="<?php echo Manager\Config::URL.'artwork/delete/'.$artwork->id_artwork ; ?>">Delete</a>
+      <a
+        href="<?php echo Manager\Config::URL.'artwork/delete/'.$artwork->id_artwork ; ?>"
+        >Delete</a
+      >
     </td>
   </tr>
 
-<?php } ?>
+  <?php } ?>
 </table>
