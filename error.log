@@ -8,3 +8,5 @@
 2025-04-04 16:25 SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'INSER INTO artwork(title,artist_name,year,size,id_warehouse) VALUES ('iaja','hah' à la ligne 1
 2025-04-04 16:26 SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'INSER INTO artwork(title,artist_name,year,size,id_warehouse) VALUES ('iaja','hah' à la ligne 1
 2025-04-04 16:50 SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'INSER INTO artwork(title,artist_name,year,size,id_warehouse) VALUES ('iaja','hah' à la ligne 1
+2025-04-04 18:05 SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'UPDAT artwork SET  WHERE id_artwork = '1'' à la ligne 1
+2025-04-04 18:05 SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'UPDAT artwork SET  WHERE id_artwork = '1'' à la ligne 1

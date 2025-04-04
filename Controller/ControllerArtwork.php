@@ -33,7 +33,6 @@ class ControllerArtwork extends Controller
       else if (empty($_POST['id_warehouse'])) $error = "Choose a Warehouse";
       else {
         try {
-
           if ($this->model->insertInto($_POST)) {
             $_SESSION['Message'] = "L'oeuvre a été ajouter avec succes";
           } else {
@@ -57,37 +56,62 @@ class ControllerArtwork extends Controller
   public function edit($id)
   {
     $ctlWarehouse = new ControllerWarehouse;
-    if (empty($_POST)) {
+    if (empty($_POST['title'])) {
       $params = [
         'title' => $this->model->selectById($id)->title,
         'current' => $this->model->selectById($id),
-        'warehouses' => $ctlWarehouse->model->selectAll()
+        'warehouses' => $ctlWarehouse->model->selectAll(),
+        'error' => 'Insert a title'
       ];
+      $this->render('artwork/newArtwork.html', $params);
+    } else if (empty($_POST['artist_name'])) {
+      $params = [
+        'title' => $this->model->selectById($id)->title,
+        'current' => $this->model->selectById($id),
+        'warehouses' => $ctlWarehouse->model->selectAll(),
+        'error' => 'Insert an artist name'
+      ];
+      $this->render('artwork/newArtwork.html', $params);
+    } else if (empty($_POST['year'])) {
+      $params = [
+        'title' => $this->model->selectById($id)->title,
+        'current' => $this->model->selectById($id),
+        'warehouses' => $ctlWarehouse->model->selectAll(),
+        'error' => 'Insert a year of creation'
+      ];
+      $this->render('artwork/newArtwork.html', $params);
+    } else if (empty($_POST['size'])) {
+      $params = [
+        'title' => $this->model->selectById($id)->title,
+        'current' => $this->model->selectById($id),
+        'warehouses' => $ctlWarehouse->model->selectAll(),
+        'error' => 'Insert a size'
+      ];
+      $this->render('artwork/newArtwork.html', $params);
+    } else if (empty($_POST['id_warehouse'])) {
+      $params = [
+        'title' => $this->model->selectById($id)->title,
+        'current' => $this->model->selectById($id),
+        'warehouses' => $ctlWarehouse->model->selectAll(),
+        'error' => 'Choose a warehouse '
+      ];
+      $this->render('artwork/newArtwork.html', $params);
     } else {
-      if (empty($_POST['title'])) {
-        $error = "Add a title please";
-        $params = [
-          'title' => $this->model->selectById($id)->title,
-          'current' => $this->model->selectById($id),
-          'warehouses' => $ctlWarehouse->model->selectAll(),
-          'errorMessage' => $error
-        ];
-      } else if (empty($_POST['artist_name'])) $error = "Add an artist name please";
-      else if (empty($_POST['year'])) $error = "Add a year";
-      else if (empty($_POST['size'])) $error = "Add a size";
-      else if (empty($_POST['id_warehouse'])) $error = "Choose a Warehouse";
-      else {
-        try {
-          $this->model->update($_POST, $id);
-        } catch (PDOException $e) {
-          Manager\ErrorManager::interceptionErreur(date('Y-m-d H:i ') . $e->getMessage());
-        }
+      try {
+        $this->model->update($_POST, $id);
+        $_SESSION['Message'] = 'The update is a success';
         header("Location:" . Manager\Config::URL . "artwork/viewALL");
         exit;
+      } catch (PDOException $e) {
+        $_SESSION['Message'] = 'Oh No an error has been detected';
+        Manager\ErrorManager::interceptionErreur(date('Y-m-d H:i ') . $e->getMessage());
       }
     }
     $params = [
-      'title' => 'Update Artwork',
+      'title' => $this->model->selectById($id)->title,
+      'current' => $this->model->selectById($id),
+      'warehouses' => $ctlWarehouse->model->selectAll(),
+
     ];
     $this->render('artwork/newArtwork.html', $params);
   }
