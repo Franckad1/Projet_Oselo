@@ -3,12 +3,12 @@ echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']."<br>".'<button>
   <a href="">Ok</a></button
 >'; unset($_SESSION['Message']) ?>
 
-<center><h1>Artworks</h1></center>
+<center><h1><?php echo (isset($warehouse->name)) ?  $warehouse->name : ''?> Artworks </h1></center>
 <table>
   <tr>
     <th scope="col">N°</th>
     <th scope="col">Name</th>
-    <th scope="col">Warehouse Name</th>
+    <?php if(!isset($artwork->name)){ ?> <th scope="col">Warehouse Name</th> <?php } ?>
     <th scope="col">Year</th>
     <th scope="col">Artist</th>
     <th scope="col">Size</th>
@@ -17,14 +17,15 @@ echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']."<br>".'<button>
   <tr>
     <th scope="row"><?php echo $artwork->id_artwork ?></th>
     <td><?php echo $artwork->title ?></td>
-    <td>
+    <?php if(isset($artwork->name)){ ?>
+      <td>
       <a
         href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"
       >
-        <?php if(isset($artwork->id_warehouse)) echo $artwork->name; else echo
-        'Not defined'; ?>
+        <?php if(isset($artwork->name))echo (isset($artwork->id_warehouse)) ?  $artwork->name : 'Not defined'; 
+        else echo $warehouse->name ;?>
       </a>
-    </td>
+    </td><?php }else{} ?>
     <td><?php echo $artwork->year ?></td>
     <td><?php echo $artwork->artist_name ?></td>
     <td><?php echo $artwork->size ?></td>

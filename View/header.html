@@ -10,17 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
 <body>
+  <header>
   <div class="container"> 
-    
-    <nav>
-    <center>
+    <nav class="main-nav">
+      <div class="logo"><a href="<?php echo Manager\Config::URL;?>">Oselo Gallery</a></div>
+      <center>
       <ul>
-        <li><a href="<?php echo Manager\Config::URL;?>">List of warehouses</a></li>
         <li><a href="<?php echo Manager\Config::URL.'artwork/viewALL';?>">List of artworks</a></li>
         <li><a href="<?php echo Manager\Config::URL.'artwork/new';?>">Add an artwork</a></li>
         <li><a href="<?php echo Manager\Config::URL.'warehouse/new';?>">Add a Warehouse</a></li>
       </ul>
-    </center>
+      </center>
     </nav>
   
   </div>
+</header>

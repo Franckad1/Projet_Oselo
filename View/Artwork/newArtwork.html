@@ -1,64 +1,65 @@
-<center>
-  <?php echo (empty($errorMessage)) ? '' : $errorMessage;
-  $error='' ?>
-  <form action="" method="post">
-    <label>Title</label><span style="color: red; font-size: 20px">*</span>
-    <input
-      class="input"
-      type="text"
-      placeholder="Title"
-      name="title"
-      value="<?php echo $_POST['title'] ?? $current->title ?? '' ?>"
-    /><br />
+<br>
+<center><?php echo (empty($errorMessage)) ? '' : $errorMessage;
+  $error='' ?></center><br>
+<form action="" method="post">
+  <label>Title</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="Title"
+    name="title"
+    value="<?php echo $_POST['title'] ?? $current->title ?? '' ?>"
+  /><br />
 
-    <label>Artist Name</label
-    ><span style="color: red; font-size: 20px">*</span>
-    <input
-      class="input"
-      type="text"
-      placeholder="artist"
-      name="artist_name"
-      value="<?php echo $_POST['artist_name'] ?? $current->artist_name ?? '' ?>"
-    /><br />
+  <label>Artist Name</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="artist"
+    name="artist_name"
+    value="<?php echo $_POST['artist_name'] ?? $current->artist_name ?? '' ?>"
+  /><br />
 
-    <label>Year</label><span style="color: red; font-size: 20px">*</span>
-    <input
-      class="input"
-      type="date"
-      placeholder="year"
-      name="year"
-      value="<?php echo $_POST['year'] ?? $current->year ??'' ?>"
-    /><br />
+  <label>Year</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="number"
+    min="1901"
+    max="2025"
+    step="1"
+    placeholder="year of creation"
+    name="year"
+    value="<?php echo $_POST['year'] ?? $current->year ??'' ?>"
+  /><br />
 
-    <label>Size</label><span style="color: red; font-size: 20px">*</span>
-    <input
-      class="input"
-      type="text"
-      placeholder="Size"
-      name="size"
-      value="<?php echo $_POST['size'] ?? $current->size ??'' ?>"
-    /><br />
+  <label>Size</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="Size"
+    name="size"
+    value="<?php echo $_POST['size'] ?? $current->size ??'' ?>"
+  /><br />
 
-    <label>Warehouse</label><span style="color: red; font-size: 20px">*</span>
-    <select name="id_warehouse">
-      <option value="">Choisissez une galerie...</option>
-      <?php foreach($warehouses as $warehouse){ 
+  <label>Warehouse</label><span style="color: red; font-size: 20px">*</span>
+  <select name="id_warehouse">
+    <option value="">Choisissez une galerie...</option>
+    <?php foreach($warehouses as $warehouse){ 
       if($warehouse->id_warehouse == $_POST['id_warehouse'] or
-      $warehouse->id_warehouse == $current->id_warehouse ){ ?>
-      <option value="<?php echo $warehouse->id_warehouse; ?>" selected>
-        <?php echo $warehouse->name; ?>
-      </option>
-      <?php }else{ ?>
-      <option value="<?php echo $warehouse->id_warehouse; ?>">
-        <?php echo $warehouse->name; ?>
-      </option>
-      <?php } ?>
-      <?php } ?>
-    </select>
-    <br />
-    <br />
-    <button class="button">
-      <?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?>
-    </button>
-  </form>
-</center>
+    $warehouse->id_warehouse == $current->id_warehouse ){ ?>
+    <option value="<?php echo $warehouse->id_warehouse; ?>" selected>
+      <?php echo $warehouse->name; ?>
+    </option>
+    <?php }else{ ?>
+    <option value="<?php echo $warehouse->id_warehouse; ?>">
+      <?php echo $warehouse->name; ?>
+    </option>
+    <?php } ?>
+    <?php } ?>
+  </select>
+  <br />
+  <br />
+  <button class="button">
+    <?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?>
+  </button>
+</form>

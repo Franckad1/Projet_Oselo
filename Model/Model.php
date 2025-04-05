@@ -33,7 +33,7 @@ abstract class Model
   public function insertInto($values)
   {
 
-    $stmt = $this->pdo->prepare("INSER INTO " . $this->nomTable . "(" . implode(',', array_keys($values)) .
+    $stmt = $this->pdo->prepare("INSERT INTO " . $this->nomTable . "(" . implode(',', array_keys($values)) .
       ") VALUES (:" . implode(',:', array_keys($values)) . ")");
 
     $stmt->execute($values);

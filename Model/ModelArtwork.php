@@ -18,4 +18,11 @@ class ModelArtwork extends Model
     $stmt->execute();
     return $stmt->fetchAll();
   }
+  public function joined($id){
+  
+    $stmt = $this->pdo->prepare("SELECT * FROM " . $this->nomTable . " WHERE id_warehouse = $id");
+    $stmt->execute();
+    return $stmt->fetchAll();
+
+  }
 }

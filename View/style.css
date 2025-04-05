@@ -4,7 +4,6 @@ body {
   color: var(--dark-gray);
   line-height: 1.6;
 }
-
 .container {
   width: 100%;
   max-width: 1200px;
@@ -13,7 +12,7 @@ body {
 }
 
 header {
-  background-color: var(--primary);
+  background-color: #4E598C;
   color: var(--white);
   padding: 1rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -22,13 +21,20 @@ header {
 header .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.logo a{
+  text-decoration: none;       /* pas de soulignement */
+  color: inherit; 
+}
 nav ul {
   display: flex;
   list-style: none;
-  justify-content: center;
 }
 
 nav ul li {
@@ -46,7 +52,26 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: var(--secondary);
+  color: #F9C784;
+}
+td a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+td a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F9C784;
+}
+
+
+div a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F9C784;
 }
 
 th,
@@ -56,12 +81,12 @@ td {
 }
 
 th[scope="col"] {
-  background-color: #505050;
+  background-color: #4E598C;
   color: #fff;
 }
 
 th[scope="row"] {
-  background-color: #d6ecd4;
+  background-color: #4E598C;
 }
 
 td {
@@ -69,7 +94,7 @@ td {
 }
 
 tr:nth-of-type(even) {
-  background-color: #eee;
+  background-color: #4E598C;
 }
 
 table {
@@ -83,6 +108,76 @@ table {
 caption {
   caption-side: bottom;
   padding: 10px;
+}
+/* Réinitialisation de base */
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+/* Style général du formulaire */
+form {
+  background-color: #4E598C;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style des champs texte */
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Style des labels */
+label {
+  padding: 12px 0 6px 0;
+  display: inline-block;
+  align-items: start;
+  font-weight: bold;
+}
+
+/* Style du bouton */
+.button {
+  background-color: #F9C784;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #4E598C;
+}
+button {
+  background-color: #F9C784;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #4E598C;
+}
+button a{
+  color: white;
+  text-decoration: none;
+}
+button a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F9C784;
 }
 
 /* Rendre le tableau responsive */
@@ -131,5 +226,14 @@ caption {
     left: 10px;
     font-weight: bold;
     text-align: left;
+  }
+  .input,
+  .button {
+    width: 100%;
+    float: none;
+  }
+
+  .button {
+    margin-top: 10px;
   }
 }

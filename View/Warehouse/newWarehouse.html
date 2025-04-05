@@ -1,35 +1,34 @@
-<center>
-  <div>
-    <?php 
+<br>
+<div>
+  <?php 
      if(!empty($error)) {
       echo $error;
     }
     ?>
-  </div>
+</div>
 
-  <form action="" method="post">
-    <label for="name">Warehouse Name</label
-    ><span style="color: red; font-size: 20px">*</span><br />
-    <input
-      class="input"
-      type="text"
-      placeholder="Name"
-      name="name"
-      value="<?php echo $_POST['name'] ?? $current->name ?? '' ?>"
-    /><br />
+<form action="" method="post">
+  <label for="name">Warehouse Name</label
+  ><span style="color: red; font-size: 20px">*</span><br />
+  <input
+    class="input"
+    type="text"
+    placeholder="Name"
+    name="name"
+    value="<?php echo $_POST['name'] ?? $current->name ?? '' ?>"
+  /><br />
 
-    <label for="adress">Adress</label
-    ><span style="color: red; font-size: 20px">*</span><br />
-    <input
-      class="input"
-      type="text"
-      placeholder="Adress"
-      name="adress"
-      value="<?php echo $_POST['adress'] ?? $current->adress ?? '' ?>"
-    /><br />
-    <br />
-    <button class="button">
-      <?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?>
-    </button>
-  </form>
-</center>
+  <label for="adress">Adress</label
+  ><span style="color: red; font-size: 20px">*</span><br />
+  <input
+    class="input"
+    type="text"
+    placeholder="Adress"
+    name="adress"
+    value="<?php echo $_POST['adress'] ?? $current->adress ?? '' ?>"
+  /><br />
+  <br />
+  <button class="button">
+    <?php if(empty($current)) echo 'Ajouter';else echo 'Modifier'; ?>
+  </button>
+</form>
