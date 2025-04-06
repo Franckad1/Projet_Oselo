@@ -1,5 +1,6 @@
 "# Projet_Oselo"
-Welcome to Oselo Gallery Project application, is a managering app that register artworks and warehouses 
+
+Welcome to Oselo Gallery Project application, is a managering app that register artworks and warehouses.
 
 To launch the project you need to: 
   -Install WAMP(XAMP or LAMP(MacOs))
