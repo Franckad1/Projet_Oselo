@@ -1,53 +1,70 @@
 <?php 
+// Affiche un message de session s'il existe, puis un bouton "Ok" pour le fermer
 echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']."<br>".'<button>
   <a href="">Ok</a></button
->'; unset($_SESSION['Message']) ?>
+>'; unset($_SESSION['Message']); // Supprime le message de la session après
+//l'affichage ?>
 
 <center>
   <h1>
     <?php echo (isset($warehouse->name)) ? $warehouse->name : ''?> Artworks
+    <!-- Affiche le nom de l'entrepôt si défini, sinon rien -->
   </h1>
 </center>
+
 <table>
   <tr>
+    <!-- En-têtes de la table -->
     <th scope="col">N°</th>
     <th scope="col">Name</th>
     <?php if(!isset($artwork->name)){ ?>
+    <!-- Si l'artwork n'a pas de 'name', affiche la colonne Warehouse Name -->
     <th scope="col">Warehouse Name</th>
     <?php } ?>
     <th scope="col">Year</th>
     <th scope="col">Artist</th>
     <th scope="col">Size</th>
   </tr>
+
+  <!-- Boucle sur les œuvres d'art -->
   <?php foreach($artworks as $artwork ){?>
   <tr>
+    <!-- Affiche les détails de chaque artwork -->
     <th scope="row"><?php echo $artwork->id_artwork ?></th>
     <td><?php echo $artwork->title ?></td>
+
     <?php if(isset($artwork->name)){ ?>
+    <!-- Si l'œuvre d'art a un 'name', afficher l'entrepôt correspondant -->
     <td>
       <a
         href="<?php echo Manager\Config::URL.'warehouse/edit/'.$artwork->id_warehouse ;?>"
       >
-        <?php if(isset($artwork->name))echo (isset($artwork->id_warehouse)) ?
-        $artwork->name : 'Not defined'; else echo $warehouse->name ;?>
+        <?php 
+        // Affiche le nom de l'entrepôt ou 'Not defined' si non défini
+        echo (isset($artwork->id_warehouse)) ? $artwork->name : 'Not defined';
+        ?>
       </a>
     </td>
     <?php }else{} ?>
+
     <td><?php echo $artwork->year ?></td>
     <td><?php echo $artwork->artist_name ?></td>
     <td><?php echo $artwork->size ?></td>
 
+    <!-- Liens pour éditer et supprimer l'œuvre d'art -->
     <td>
       <a
         href="<?php echo Manager\Config::URL.'artwork/edit/'.$artwork->id_artwork ; ?>"
-        >Edit</a
       >
+        Edit
+      </a>
     </td>
     <td>
       <a
         href="<?php echo Manager\Config::URL.'artwork/delete/'.$artwork->id_artwork ; ?>"
-        >Delete</a
       >
+        Delete
+      </a>
     </td>
   </tr>
 

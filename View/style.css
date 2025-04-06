@@ -1,238 +1,273 @@
+/* Style général du corps de la page */
 body {
-  font-family: "Lato", sans-serif;
-  background-color: var(--light-gray);
-  color: var(--dark-gray);
-  line-height: 1.6;
+  font-family: "Lato", sans-serif; /* Police de caractères */
+  background-color: var(--light-gray); /* Couleur de fond de la page */
+  color: var(--dark-gray); /* Couleur du texte */
+  line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
 }
+
+/* Conteneur principal avec largeur maximale */
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+  width: 100%; /* Largeur complète */
+  max-width: 1200px; /* Largeur maximale */
+  margin: 0 auto; /* Centrer le conteneur */
+  padding: 0 15px; /* Espacement interne */
 }
 
+/* Header avec fond bleu et texte blanc */
 header {
-  background-color: #4e598c;
-  color: var(--white);
-  padding: 1rem 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4e598c; /* Couleur de fond */
+  color: var(--white); /* Couleur du texte */
+  padding: 1rem 0; /* Espacement interne */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Alignement des éléments dans le header */
 header .container {
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* Affichage flex pour le logo et le menu */
+  justify-content: space-between; /* Espacement entre les éléments */
 }
 
+/* Style du logo dans le header */
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 1.5rem; /* Taille du texte */
+  font-weight: 700; /* Poids du texte */
+  letter-spacing: 1px; /* Espacement des lettres */
 }
+
 .logo a {
-  text-decoration: none; /* pas de soulignement */
-  color: inherit;
+  text-decoration: none; /* Pas de soulignement pour les liens */
+  color: inherit; /* Héritage de la couleur du texte */
 }
+
+/* Style du menu de navigation */
 nav ul {
-  display: flex;
-  list-style: none;
+  display: flex; /* Affichage horizontal des éléments */
+  list-style: none; /* Enlever les puces */
 }
 
 nav ul li {
-  margin-left: 1.5rem;
+  margin-left: 1.5rem; /* Espacement entre les éléments du menu */
 }
 
 nav ul li a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  color: var(--white); /* Couleur du texte des liens */
+  text-decoration: none; /* Pas de soulignement */
+  font-weight: 500; /* Poids du texte */
+  transition: all 0.3s ease; /* Effet de transition au survol */
+  padding: 0.5rem 0.75rem; /* Espacement interne des liens */
+  border-radius: 4px; /* Bordure arrondie */
 }
 
+/* Effet de survol pour les liens du menu */
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f9c784;
+  background-color: rgba(255, 255, 255, 0.1); /* Changement de fond */
+  color: #f9c784; /* Changement de couleur du texte */
 }
+
+/* Style des liens dans le tableau */
 td a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  color: var(--white); /* Couleur des liens */
+  text-decoration: none; /* Pas de soulignement */
+  font-weight: 500; /* Poids du texte */
+  transition: all 0.3s ease; /* Effet de transition au survol */
+  padding: 0.5rem 0.75rem; /* Espacement interne des liens */
+  border-radius: 4px; /* Bordure arrondie */
 }
 
+/* Effet de survol pour les liens dans le tableau */
 td a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f9c784;
+  background-color: rgba(255, 255, 255, 0.1); /* Changement de fond */
+  color: #f9c784; /* Changement de couleur du texte */
 }
 
+/* Style des éléments div contenant des liens */
 div a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f9c784;
+  background-color: rgba(255, 255, 255, 0.1); /* Changement de fond */
+  color: #f9c784; /* Changement de couleur du texte */
 }
 
+/* Style des cellules du tableau */
 th,
 td {
-  border: 1px solid rgb(160 160 160);
-  padding: 8px 10px;
+  border: 1px solid rgb(160 160 160); /* Bordure des cellules */
+  padding: 8px 10px; /* Espacement interne des cellules */
 }
 
+/* Style des entêtes de colonne */
 th[scope="col"] {
-  background-color: #4e598c;
-  color: #fff;
+  background-color: #4e598c; /* Couleur de fond des entêtes */
+  color: #fff; /* Couleur du texte des entêtes */
 }
 
+/* Style des entêtes de ligne */
 th[scope="row"] {
-  background-color: #4e598c;
+  background-color: #4e598c; /* Couleur de fond */
 }
 
+/* Alignement des cellules */
 td {
-  text-align: center;
+  text-align: center; /* Centrer le texte dans les cellules */
 }
 
+/* Style des lignes paires du tableau */
 tr:nth-of-type(even) {
-  background-color: #4e598c;
+  background-color: #4e598c; /* Couleur de fond des lignes paires */
 }
 
+/* Style général du tableau */
 table {
-  border-collapse: collapse;
-  font-family: sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  width: 100%;
+  border-collapse: collapse; /* Supprimer l'espace entre les bordures */
+  font-family: sans-serif; /* Police sans-serif */
+  font-size: 0.8rem; /* Taille de police réduite */
+  letter-spacing: 1px; /* Espacement des lettres */
+  width: 100%; /* Largeur complète */
 }
 
+/* Style du titre de tableau */
 caption {
-  caption-side: bottom;
-  padding: 10px;
+  caption-side: bottom; /* Position du titre */
+  padding: 10px; /* Espacement autour du titre */
 }
-/* Réinitialisation de base */
+
+/* Réinitialisation des styles de base */
 * {
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  box-sizing: border-box; /* Inclure la bordure dans la largeur et la hauteur */
+  font-family: "Lato", sans-serif; /* Police de caractères */
 }
 
-/* Style général du formulaire */
+/* Style du formulaire */
 form {
-  background-color: #4e598c;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #4e598c; /* Couleur de fond */
+  padding: 20px; /* Espacement interne */
+  border-radius: 5px; /* Bordures arrondies */
+  max-width: 800px; /* Largeur maximale */
+  margin: 0 auto; /* Centrer le formulaire */
 }
 
-/* Style des champs texte */
+/* Style des champs de texte */
 .input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+  width: 100%; /* Largeur complète */
+  padding: 12px; /* Espacement interne */
+  margin-top: 6px; /* Espacement au-dessus */
+  margin-bottom: 16px; /* Espacement en dessous */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 4px; /* Bordures arrondies */
+  resize: vertical; /* Permet de redimensionner verticalement */
 }
 
 /* Style des labels */
 label {
-  padding: 12px 0 6px 0;
-  display: inline-block;
-  align-items: start;
-  font-weight: bold;
+  padding: 12px 0 6px 0; /* Espacement autour du label */
+  display: inline-block; /* Affichage en ligne */
+  align-items: start; /* Alignement à gauche */
+  font-weight: bold; /* Mettre en gras */
 }
 
-/* Style du bouton */
+/* Style des boutons */
 .button {
-  background-color: #f9c784;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-  font-weight: bold;
+  background-color: #f9c784; /* Couleur de fond jaune */
+  color: white; /* Couleur du texte */
+  padding: 12px 20px; /* Espacement interne */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bordures arrondies */
+  cursor: pointer; /* Changer le curseur */
+  float: right; /* Placer à droite */
+  font-weight: bold; /* Mettre en gras */
 }
 
+/* Effet de survol pour les boutons */
 .button:hover {
-  background-color: #4e598c;
+  background-color: #4e598c; /* Changer la couleur de fond au survol */
 }
+
+/* Style général des boutons */
 button {
-  background-color: #f9c784;
-  color: white;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+  background-color: #f9c784; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 10px 10px; /* Espacement interne */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bordures arrondies */
+  cursor: pointer; /* Curseur pointeur */
+  font-weight: bold; /* Poids du texte */
 }
 
+/* Effet de survol pour les boutons */
 button:hover {
-  background-color: #4e598c;
-}
-button a {
-  color: white;
-  text-decoration: none;
-}
-button a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f9c784;
+  background-color: #4e598c; /* Changer la couleur de fond */
 }
 
-/* Rendre le tableau responsive */
+/* Style des liens dans les boutons */
+button a {
+  color: white; /* Couleur du texte des liens */
+  text-decoration: none; /* Pas de soulignement */
+}
+
+/* Effet de survol pour les liens dans les boutons */
+button a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Changement de fond au survol */
+  color: #f9c784; /* Changer la couleur du texte */
+}
+
+/* Styles responsive pour les petits écrans */
 @media screen and (max-width: 600px) {
   header .container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Disposition verticale pour les petits écrans */
+    align-items: flex-start; /* Alignement à gauche */
   }
 
   nav ul {
-    margin-top: 1rem;
-    flex-wrap: wrap;
+    margin-top: 1rem; /* Espacement en haut */
+    flex-wrap: wrap; /* Enrouler les éléments du menu */
   }
 
   nav ul li {
-    margin-left: 0;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
+    margin-left: 0; /* Supprimer l'espacement à gauche */
+    margin-right: 1rem; /* Espacement à droite */
+    margin-bottom: 0.5rem; /* Espacement en bas */
   }
 
   table {
-    border: 0;
-    width: 100%;
-    display: block;
-    overflow-x: auto;
+    border: 0; /* Supprimer les bordures */
+    width: 100%; /* Largeur complète */
+    display: block; /* Afficher en bloc */
+    overflow-x: auto; /* Ajouter un défilement horizontal */
   }
+
   thead {
-    display: none;
+    display: none; /* Masquer l'entête du tableau */
   }
+
   tr {
-    display: block;
-    margin-bottom: 10px;
-    border: 1px solid rgb(140 140 140);
-    padding: 8px;
-    background: #fff;
+    display: block; /* Afficher chaque ligne comme un bloc */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+    border: 1px solid rgb(140 140 140); /* Bordure des lignes */
+    padding: 8px; /* Espacement interne */
+    background: #fff; /* Fond blanc */
   }
+
   td {
-    display: block;
-    text-align: right;
-    padding: 8px;
-    position: relative;
+    display: block; /* Afficher chaque cellule comme un bloc */
+    text-align: right; /* Alignement du texte à droite */
+    padding: 8px; /* Espacement interne */
+    position: relative; /* Positionnement relatif */
   }
+
   td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-    text-align: left;
+    content: attr(data-label); /* Ajouter le label avant la cellule */
+    position: absolute; /* Positionner absolument */
+    left: 10px; /* Décalage à gauche */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Alignement du texte à gauche */
   }
+
   .input,
   .button {
-    width: 100%;
-    float: none;
+    width: 100%; /* Largeur complète des champs et boutons */
+    float: none; /* Annuler le flottement */
   }
 
   .button {
-    margin-top: 10px;
+    margin-top: 10px; /* Ajouter un espacement en haut */
   }
 }

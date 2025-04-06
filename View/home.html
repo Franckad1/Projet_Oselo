@@ -1,37 +1,56 @@
 <?php 
+// Affiche un message de session s'il existe et un bouton "Ok" pour le fermer
 echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']."<br>".'<button>
   <a href="">Ok</a></button
->'; unset($_SESSION['Message']) ?>
+>'; unset($_SESSION['Message']); // Une fois le message affiché, il est supprimé
+//de la session ?>
 
+<!-- Titre de la page -->
 <center><h1>Warehouses</h1></center>
+
+<!-- Table contenant les informations des entrepôts -->
 <table>
   <tr>
+    <!-- En-têtes des colonnes -->
     <th scope="col">N°</th>
     <th scope="col">Warehouse Name</th>
     <th scope="col">Address</th>
   </tr>
+
+  <!-- Boucle pour afficher chaque entrepôt -->
   <?php foreach($warehouses as $warehouse ){?>
   <tr>
+    <!-- ID de l'entrepôt -->
     <th scope="row"><?php echo $warehouse->id_warehouse ?></th>
+
+    <!-- Nom de l'entrepôt avec un lien vers les œuvres associées -->
     <td>
       <a
         href="<?php echo Manager\Config::URL.'artwork/viewJoined/'.$warehouse->id_warehouse ; ?>"
-        ><?php echo $warehouse->name ?></a
       >
+        <?php echo $warehouse->name ?>
+      </a>
     </td>
+
+    <!-- Adresse de l'entrepôt -->
     <td><?php echo $warehouse->adress ?></td>
 
+    <!-- Lien pour éditer l'entrepôt -->
     <td>
       <a
         href="<?php echo Manager\Config::URL.'warehouse/edit/'.$warehouse->id_warehouse ; ?>"
-        >Edit</a
       >
+        Edit
+      </a>
     </td>
+
+    <!-- Lien pour supprimer l'entrepôt -->
     <td>
       <a
         href="<?php echo Manager\Config::URL.'warehouse/delete/'.$warehouse->id_warehouse ; ?>"
-        >Delete</a
       >
+        Delete
+      </a>
     </td>
   </tr>
   <?php } ?>
