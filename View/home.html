@@ -13,9 +13,12 @@ echo (empty($_SESSION['Message'])) ? '' :  $_SESSION['Message']."<br>".'<button>
   <?php foreach($warehouses as $warehouse ){?>
   <tr>
     <th scope="row"><?php echo $warehouse->id_warehouse ?></th>
-    <td><a
-      href="<?php echo Manager\Config::URL.'artwork/viewJoined/'.$warehouse->id_warehouse ; ?>"
-      ><?php echo $warehouse->name ?></a></td>
+    <td>
+      <a
+        href="<?php echo Manager\Config::URL.'artwork/viewJoined/'.$warehouse->id_warehouse ; ?>"
+        ><?php echo $warehouse->name ?></a
+      >
+    </td>
     <td><?php echo $warehouse->adress ?></td>
 
     <td>

@@ -20,14 +20,15 @@ class ControllerArtwork extends Controller
     ];
     $this->render('artwork/artworks.html', $params);
   }
-  public function viewJoined($id){
+  public function viewJoined($id)
+  {
     $ctlWarehouse = new ControllerWarehouse;
-    $params=[
-      'title'=>'Artworks of '.$ctlWarehouse->model->selectById($id)->name,
-      'artworks'=> $this->model->joined($id),
-      'warehouse'=> $ctlWarehouse->model->selectById($id)
+    $params = [
+      'title' => 'Artworks of ' . $ctlWarehouse->model->selectById($id)->name,
+      'artworks' => $this->model->joined($id),
+      'warehouse' => $ctlWarehouse->model->selectById($id)
     ];
-    $this->render('artwork/artworks.html',$params);
+    $this->render('artwork/artworks.html', $params);
   }
   public function view($error)
   {

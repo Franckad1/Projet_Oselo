@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #4E598C;
+  background-color: #4e598c;
   color: var(--white);
   padding: 1rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -28,9 +28,9 @@ header .container {
   font-weight: 700;
   letter-spacing: 1px;
 }
-.logo a{
-  text-decoration: none;       /* pas de soulignement */
-  color: inherit; 
+.logo a {
+  text-decoration: none; /* pas de soulignement */
+  color: inherit;
 }
 nav ul {
   display: flex;
@@ -52,7 +52,7 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #F9C784;
+  color: #f9c784;
 }
 td a {
   color: var(--white);
@@ -65,13 +65,12 @@ td a {
 
 td a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #F9C784;
+  color: #f9c784;
 }
-
 
 div a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #F9C784;
+  color: #f9c784;
 }
 
 th,
@@ -81,12 +80,12 @@ td {
 }
 
 th[scope="col"] {
-  background-color: #4E598C;
+  background-color: #4e598c;
   color: #fff;
 }
 
 th[scope="row"] {
-  background-color: #4E598C;
+  background-color: #4e598c;
 }
 
 td {
@@ -94,7 +93,7 @@ td {
 }
 
 tr:nth-of-type(even) {
-  background-color: #4E598C;
+  background-color: #4e598c;
 }
 
 table {
@@ -117,7 +116,7 @@ caption {
 
 /* Style général du formulaire */
 form {
-  background-color: #4E598C;
+  background-color: #4e598c;
   padding: 20px;
   border-radius: 5px;
   max-width: 800px;
@@ -145,7 +144,7 @@ label {
 
 /* Style du bouton */
 .button {
-  background-color: #F9C784;
+  background-color: #f9c784;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -156,10 +155,10 @@ label {
 }
 
 .button:hover {
-  background-color: #4E598C;
+  background-color: #4e598c;
 }
 button {
-  background-color: #F9C784;
+  background-color: #f9c784;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -169,15 +168,15 @@ button {
 }
 
 button:hover {
-  background-color: #4E598C;
+  background-color: #4e598c;
 }
-button a{
+button a {
   color: white;
   text-decoration: none;
 }
 button a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #F9C784;
+  color: #f9c784;
 }
 
 /* Rendre le tableau responsive */
