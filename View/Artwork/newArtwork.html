@@ -9,36 +9,55 @@
 <!-- Formulaire d'ajout ou de modification d'une œuvre d'art -->
 <form action="" method="post">
   <!-- Champ pour le titre de l'œuvre d'art -->
-  <label>Title</label><span style="color: red; font-size: 20px">*</span> <input
-  class="input" type="text" placeholder="Title" name="title" value="<?php echo $_POST['title'] ?? $current->title
+  <label>Title</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="Title"
+    name="title"
+    value="<?php echo $_POST['title'] ?? $current->title
   ?? '' ?>"
-  <!-- Affiche la valeur envoyée en POST ou la valeur actuelle de l'œuvre si disponible -->
   /><br />
 
   <!-- Champ pour le nom de l'artiste -->
-  <label>Artist Name</label
-  ><span style="color: red; font-size: 20px">*</span> <input class="input"
-  type="text" placeholder="artist" name="artist_name" value="<?php echo $_POST['artist_name'] ?? $current->artist_name
+  <label>Artist Name</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="artist"
+    name="artist_name"
+    value="<?php echo $_POST['artist_name'] ?? $current->artist_name
   ?? '' ?>"
-  <!-- Affiche la valeur envoyée en POST ou la valeur actuelle de l'artiste si disponible -->
   /><br />
 
   <!-- Champ pour l'année de création -->
-  <label>Year</label><span style="color: red; font-size: 20px">*</span> <input
-  class="input" type="number" min="1901" max="2025" step="1" placeholder="year
-  of creation" name="year" value="<?php echo $_POST['year'] ?? $current->year ??
+  <label>Year</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="number"
+    min="1901"
+    max="2025"
+    step="1"
+    placeholder="year
+  of creation"
+    name="year"
+    value="<?php echo $_POST['year'] ?? $current->year ??
   '' ?>"
-  <!-- Affiche la valeur envoyée en POST ou la valeur actuelle de l'année si disponible -->
   /><br />
 
   <!-- Champ pour la taille de l'œuvre -->
-  <label>Size</label><span style="color: red; font-size: 20px">*</span> <input
-  class="input" type="text" placeholder="Size" name="size" value="<?php echo $_POST['size'] ?? $current->size
+  <label>Size</label><span style="color: red; font-size: 20px">*</span>
+  <input
+    class="input"
+    type="text"
+    placeholder="Size"
+    name="size"
+    value="<?php echo $_POST['size'] ?? $current->size
   ?? '' ?>"
-  <!-- Affiche la valeur envoyée en POST ou la taille actuelle de l'œuvre si disponible -->
   /><br />
+  <!--Affiche la valeur envoyée en POST ou la taille actuelle de l'œuvre si disponible-->
 
-  <!-- Sélecteur pour choisir l'entrepôt (galerie) auquel l'œuvre est associée -->
+  <!-- Sélecteur pour choisir l'entrepôt (galerie) auquel l'œuvre est associée-->
   <label>Warehouse</label><span style="color: red; font-size: 20px">*</span>
   <select name="id_warehouse">
     <option value="">Choisissez une galerie...</option>

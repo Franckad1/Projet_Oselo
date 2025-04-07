@@ -37,10 +37,10 @@ class ModelArtwork extends Model
   public function joined($id)
   {
     $stmt = $this->pdo->prepare(
-      "SELECT * FROM " . $this->nomTable . " WHERE id_warehouse = :id"
+      "SELECT * FROM " . $this->nomTable . " WHERE id_warehouse = $id"
     );
 
-    $stmt->execute(array(['id' => $id]));
+    $stmt->execute();
     return $stmt->fetchAll();
   }
 }

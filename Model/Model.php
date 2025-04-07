@@ -30,8 +30,8 @@ abstract class Model
   // Sélectionne un enregistrement par son ID
   public function selectById($id)
   {
-    $stmt = $this->pdo->prepare("SELECT * FROM " . $this->nomTable . " WHERE " . $this->IDTable . " = :id");
-    $stmt->execute(array(['id' => $id]));
+    $stmt = $this->pdo->prepare("SELECT * FROM " . $this->nomTable . " WHERE " . $this->IDTable . " = $id");
+    $stmt->execute();
     return $stmt->fetch();
   }
 
